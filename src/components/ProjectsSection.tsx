@@ -7,7 +7,7 @@ const projects = [
     title: 'E-Commerce Platform',
     description: 'Platform e-commerce modern dengan fitur lengkap termasuk payment gateway, inventory management, dan analytics dashboard.',
     tags: ['React', 'Node.js', 'PostgreSQL', 'Stripe'],
-    image: '🛒',
+    image: 'https://themewagon.com/wp-content/uploads/2020/12/eflyer.jpg',
     color: 'from-blue-500/20 to-cyan-500/20',
     github: '#',
     demo: '#',
@@ -16,7 +16,7 @@ const projects = [
     title: 'Learning Management System',
     description: 'Platform pembelajaran online dengan video streaming, quiz interaktif, dan progress tracking.',
     tags: ['Next.js', 'TypeScript', 'MongoDB', 'WebRTC'],
-    image: '📚',
+    image: 'https://cdn.dribbble.com/userupload/5486594/file/original-b8c49289bbdb12a708312740e302bfa7.png?format=webp&resize=400x300&vertical=center',
     color: 'from-purple-500/20 to-pink-500/20',
     github: '#',
     demo: '#',
@@ -25,7 +25,7 @@ const projects = [
     title: 'Social Media Dashboard',
     description: 'Dashboard analytics untuk social media dengan real-time data visualization dan reporting.',
     tags: ['React', 'D3.js', 'Firebase', 'Tailwind'],
-    image: '📊',
+    image: 'https://img.freepik.com/free-psd/social-media-marketing-agency-web-design-template_23-2149073401.jpg',
     color: 'from-orange-500/20 to-red-500/20',
     github: '#',
     demo: '#',
@@ -61,8 +61,12 @@ export default function ProjectsSection() {
               className="group"
             >
               <div className="h-full p-6 glass rounded-2xl shadow-card hover:shadow-card-hover transition-all duration-300 hover:-translate-y-2">
-                <div className={`aspect-video rounded-xl mb-4 flex items-center justify-center bg-gradient-to-br ${project.color}`}>
-                  <span className="text-6xl">{project.image}</span>
+                <div style={{
+                    backgroundImage: `url(${project.image})`,
+                    backgroundSize: "cover",
+                    backgroundPosition: "center"
+                  }} className={`aspect-video rounded-xl mb-4 flex items-center justify-center bg-gradient-to-br ${project.color}`}>
+                  
                 </div>
                 
                 <div className="space-y-3">

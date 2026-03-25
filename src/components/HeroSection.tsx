@@ -17,6 +17,19 @@ export default function HeroSection() {
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.25 }}
+            className="flex justify-center mb-6"
+          >
+            <img
+              src="profile.jpeg"
+              alt="Profile Najla Kayyasah"
+              className="w-32 h-32 rounded-full object-cover border-4 border-white shadow-lg"
+            />
+          </motion.div>
           
 
           <motion.h1
@@ -25,9 +38,7 @@ export default function HeroSection() {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="font-display text-4xl md:text-6xl lg:text-7xl font-bold mb-6"
           >
-            Fullstack Developer
-            <br />
-            <span className="text-gradient">&amp; Content Creator</span>
+            Najla Kayyasah
           </motion.h1>
 
           <motion.p
@@ -36,9 +47,23 @@ export default function HeroSection() {
             transition={{ duration: 0.8, delay: 0.5 }}
             className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto"
           >
-            Saya membangun aplikasi web yang indah dan fungsional, 
-            serta membagikan pengetahuan melalui konten yang inspiratif.
+           Saya adalah seorang Web Developer dan Content Creator yang berfokus pada pembuatan aplikasi web yang modern, fungsional, dan user-friendly.
           </motion.p>
+
+          <div className="flex justify-center gap-8 mb-10 text-center">
+            <div>
+              <h3 className="text-2xl font-bold text-primary">10+</h3>
+              <p className="text-sm text-muted-foreground">Projects</p>
+            </div>
+            <div>
+              <h3 className="text-2xl font-bold text-primary">1+</h3>
+              <p className="text-sm text-muted-foreground">Years Experience</p>
+            </div>
+            <div>
+              <h3 className="text-2xl font-bold text-primary">5+</h3>
+              <p className="text-sm text-muted-foreground">Clients</p>
+            </div>
+          </div>
 
           <motion.div
             initial={{ opacity: 0, y: 30 }}

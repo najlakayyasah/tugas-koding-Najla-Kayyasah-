@@ -1,28 +1,73 @@
 import { motion } from 'framer-motion';
 
-const skills = {
-  frontend: [
-    { name: 'React', level: 95 },
-    { name: 'TypeScript', level: 90 },
-    { name: 'Next.js', level: 88 },
-    { name: 'Tailwind CSS', level: 95 },
-    { name: 'Vue.js', level: 75 },
-  ],
-  backend: [
-    { name: 'Node.js', level: 90 },
-    { name: 'Python', level: 85 },
-    { name: 'PostgreSQL', level: 88 },
-    { name: 'MongoDB', level: 82 },
-    { name: 'GraphQL', level: 78 },
-  ],
-  tools: [
-    { name: 'Git', level: 95 },
-    { name: 'Docker', level: 80 },
-    { name: 'AWS', level: 75 },
-    { name: 'Figma', level: 85 },
-    { name: 'CI/CD', level: 82 },
-  ],
-};
+const frontEnd = [
+  {
+    name: "React",
+    percent: 95,
+    desc: "Berpengalaman dalam membangun aplikasi interaktif dan reusable component."
+  },
+  {
+    name: "TypeScript",
+    percent: 90,
+    desc: "Menggunakan typing untuk meningkatkan keamanan dan maintainability kode."
+  },
+  {
+    name: "Next.js",
+    percent: 88,
+    desc: "Mampu menggunakan SSR, routing, dan optimasi performa."
+  },
+  {
+    name: "Tailwind CSS",
+    percent: 95,
+    desc: "Mahir membuat UI modern, responsive, dan cepat."
+  },
+  {
+    name: "Vue.js",
+    percent: 75,
+    desc: "Memahami dasar Vue seperti component dan directive."
+  }
+];
+
+const backendSkills = [
+  {
+    name: "Node.js",
+    percent: 90,
+    desc: "Berpengalaman dalam membangun REST API dan aplikasi backend menggunakan Node.js serta framework seperti Express."
+  },
+  {
+    name: "Python",
+    percent: 85,
+    desc: "Digunakan untuk pengolahan data, scripting, serta pengembangan backend yang efisien dan scalable."
+  },
+  {
+    name: "PostgreSQL",
+    percent: 88,
+    desc: "Mampu merancang dan mengelola database relasional dengan performa tinggi menggunakan PostgreSQL."
+  }
+];
+
+const toolsSkills = [
+  {
+    name: "Git",
+    percent: 95,
+    desc: "Menggunakan Git untuk version control, kolaborasi tim, serta manajemen source code secara efisien."
+  },
+  {
+    name: "Docker",
+    percent: 80,
+    desc: "Menggunakan Docker untuk membuat dan menjalankan aplikasi dalam container yang konsisten di berbagai environment."
+  },
+  {
+    name: "AWS",
+    percent: 75,
+    desc: "Memanfaatkan layanan AWS untuk deployment, hosting, dan pengelolaan infrastruktur aplikasi."
+  },
+  {
+    name: "Figma",
+    percent: 85,
+    desc: "Menggunakan Figma untuk desain UI/UX, prototyping, dan kolaborasi desain secara real-time."
+  }
+];
 
 function SkillBar({ name, level, delay }: { name: string; level: number; delay: number }) {
   return (
@@ -68,24 +113,29 @@ export default function SkillsSection() {
           <div className="w-20 h-1 bg-primary mx-auto rounded-full" />
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-3 shadow-lg glass max-w-6xl mx-auto border border-white/10 rounded-2xl overflow-hidden">
+  
           {/* Frontend */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="p-6 glass rounded-2xl shadow-card hover:shadow-card-hover transition-shadow"
+            className="p-6 md:border-b-0 md:border-r border-dark/100"
           >
-            <div className="flex items-center gap-3 mb-6">
-              <div className="p-3 rounded-xl bg-primary/10">
-                <span className="text-2xl">🎨</span>
-              </div>
-              <h3 className="font-display text-xl font-bold">Frontend</h3>
+            <div className="flex justify-center items-center gap-3 mb-6">
+              <h3 className="font-display text-gradient text-xl font-bold">Frontend</h3>
             </div>
             <div className="space-y-4">
-              {skills.frontend.map((skill, index) => (
-                <SkillBar key={skill.name} {...skill} delay={index * 0.1} />
+              {frontEnd.map((skill, index) => (
+                <div key={index} className="mb-5">
+                  <div className="flex justify-between mb-1">
+                    <span className="font-semibold text-gray-700">{skill.name}</span>
+                    <span className="text-gradient">{skill.percent}%</span>
+                  </div>
+
+                  <p className="text-sm text-gray-400 mt-1">{skill.desc}</p>
+                </div>
               ))}
             </div>
           </motion.div>
@@ -96,17 +146,21 @@ export default function SkillsSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="p-6 glass rounded-2xl shadow-card hover:shadow-card-hover transition-shadow"
+            className="p-6 md:border-b-0 md:border-r border-dark/100"
           >
-            <div className="flex items-center gap-3 mb-6">
-              <div className="p-3 rounded-xl bg-primary/10">
-                <span className="text-2xl">⚙️</span>
-              </div>
-              <h3 className="font-display text-xl font-bold">Backend</h3>
+            <div className="flex justify-center items-center gap-3 mb-6">
+              <h3 className="font-display text-gradient text-xl font-bold">Backend</h3>
             </div>
             <div className="space-y-4">
-              {skills.backend.map((skill, index) => (
-                <SkillBar key={skill.name} {...skill} delay={index * 0.1} />
+              {backendSkills.map((skill, index) => (
+                <div key={index} className="mb-5">
+                  <div className="flex justify-between mb-1">
+                    <span className="font-semibold text-gray-700">{skill.name}</span>
+                    <span className="text-gradient">{skill.percent}%</span>
+                  </div>
+
+                  <p className="text-sm text-gray-400 mt-1">{skill.desc}</p>
+                </div>
               ))}
             </div>
           </motion.div>
@@ -117,22 +171,28 @@ export default function SkillsSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="p-6 glass rounded-2xl shadow-card hover:shadow-card-hover transition-shadow"
+            className="p-6"
           >
-            <div className="flex items-center gap-3 mb-6">
-              <div className="p-3 rounded-xl bg-primary/10">
-                <span className="text-2xl">🛠️</span>
-              </div>
-              <h3 className="font-display text-xl font-bold">Tools &amp; Lainnya</h3>
+            <div className="flex justify-center items-center gap-3 mb-6">
+              <h3 className="font-display text-gradient text-xl font-bold">Tools &amp; Lainnya</h3>
             </div>
             <div className="space-y-4">
-              {skills.tools.map((skill, index) => (
-                <SkillBar key={skill.name} {...skill} delay={index * 0.1} />
+              {toolsSkills.map((skill, index) => (
+                <div key={index} className="mb-5">
+                  <div className="flex justify-between mb-1">
+                    <span className="font-semibold text-gray-700">{skill.name}</span>
+                    <span className="text-gradient">{skill.percent}%</span>
+                  </div>
+
+                  <p className="text-sm text-gray-400 mt-1">{skill.desc}</p>
+                </div>
               ))}
             </div>
           </motion.div>
+
         </div>
       </div>
+
     </section>
   );
 }

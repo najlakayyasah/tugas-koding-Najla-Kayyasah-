@@ -30,33 +30,6 @@ const projects = [
     github: '#',
     demo: '#',
   },
-  {
-    title: 'AI Content Generator',
-    description: 'Tool untuk generate konten menggunakan AI dengan integrasi berbagai model language.',
-    tags: ['Python', 'FastAPI', 'OpenAI', 'React'],
-    image: '🤖',
-    color: 'from-green-500/20 to-teal-500/20',
-    github: '#',
-    demo: '#',
-  },
-  {
-    title: 'Video Editing Tutorial',
-    description: 'Seri tutorial video editing dengan 100+ episode dan 10k+ subscribers.',
-    tags: ['Premiere Pro', 'After Effects', 'YouTube'],
-    image: '🎬',
-    color: 'from-red-500/20 to-orange-500/20',
-    isContent: true,
-    youtube: '#',
-  },
-  {
-    title: 'Coding Tips & Tricks',
-    description: 'Konten tips programming dan best practices untuk developer Indonesia.',
-    tags: ['Instagram', 'TikTok', 'YouTube Shorts'],
-    image: '💡',
-    color: 'from-cyan-500/20 to-blue-500/20',
-    isContent: true,
-    youtube: '#',
-  },
 ];
 
 export default function ProjectsSection() {
@@ -119,32 +92,6 @@ export default function ProjectsSection() {
                     ))}
                   </div>
                   
-                  <div className="flex gap-2 pt-2">
-                    {project.github && (
-                      <Button variant="outline" size="sm" className="rounded-full" asChild>
-                        <a href={project.github}>
-                          <Github className="h-4 w-4 mr-1" />
-                          Code
-                        </a>
-                      </Button>
-                    )}
-                    {project.demo && (
-                      <Button size="sm" className="rounded-full" asChild>
-                        <a href={project.demo}>
-                          <ExternalLink className="h-4 w-4 mr-1" />
-                          Demo
-                        </a>
-                      </Button>
-                    )}
-                    {project.youtube && (
-                      <Button size="sm" className="rounded-full" asChild>
-                        <a href={project.youtube}>
-                          <Play className="h-4 w-4 mr-1" />
-                          Watch
-                        </a>
-                      </Button>
-                    )}
-                  </div>
                 </div>
               </div>
             </motion.div>

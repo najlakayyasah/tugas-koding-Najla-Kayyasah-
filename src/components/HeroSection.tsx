@@ -12,7 +12,13 @@ export default function HeroSection() {
   };
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-hero">
+    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-hero"
+    style={{
+      backgroundImage: "url('bg.jpg')",
+      backgroundSize: "cover",
+      backgroundPosition: "center"
+    }}
+    >
       <ThreeScene />
       
       <div className="container mx-auto px-4 relative z-10">

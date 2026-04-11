@@ -133,9 +133,9 @@ export default function AboutSection() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: index * 0.1 }}
                   whileHover={{ y: -5, transition: { duration: 0.2 } }}
-                  className="p-5 glass rounded-2xl text-center border border-white/10 hover:border-primary/50 transition-all shadow-sm hover:shadow-primary/10"
+                  className="p-5 glass rounded-2xl text-center border border-white/10 hover:border-blue-500/50 transition-all shadow-sm hover:border-blue-500/10"
                 >
-                  <stat.icon className="h-7 w-7 text-primary mx-auto mb-3" />
+                  <stat.icon className="h-7 w-7 text-blue-500 mx-auto mb-3" />
                   <p className="font-display text-2xl font-extrabold">{stat.value}</p>
                   <p className="text-xs uppercase tracking-wider text-muted-foreground mt-1">{stat.label}</p>
                 </motion.div>
